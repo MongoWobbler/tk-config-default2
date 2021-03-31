@@ -19,12 +19,14 @@ description: Apps and engines loaded when a PublishedFile is loaded.
 includes:
 - ./includes/frameworks.yml
 - ./includes/settings/tk-shotgun.yml
+- ./includes/settings/tk-unity.yml
 
 ################################################################################
 # configuration for all engines to load in a publishedfile context
 
 engines:
   tk-shotgun: "@settings.tk-shotgun.publishedfile"
+  tk-unity: "@settings.tk-unity.all"
 
 ################################################################################
 # reference all of the common frameworks

@@ -169,7 +169,7 @@ settings.tk-multi-publish2.mari.asset_step:
 
 # asset step
 settings.tk-multi-publish2.maya.asset_step:
-  collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py"
+  collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py:{config}/tk-maya/tk-multi-publish2/basic/collector.py"
   collector_settings:
       Work Template: maya_asset_work
   publish_plugins:
@@ -190,6 +190,10 @@ settings.tk-multi-publish2.maya.asset_step:
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session_geometry.py"
     settings:
         Publish Template: asset_alembic_cache
+  - name: Publish FBX to Shotgun
+    hook: "{self}/publish_file.py:{config}/tk-maya/tk-multi-publish2/basic/publish_session_fbx.py"
+    settings:
+        FBX Publish Template: maya_fbx_publish
   help_url: *help_url
   location: "@apps.tk-multi-publish2.location"
 
@@ -558,3 +562,15 @@ settings.tk-multi-publish2.vred.asset_step:
      settings: {}
   help_url: *help_url
   location: "@apps.tk-multi-publish2.location"
+
+# ---- Unity
+
+settings.tk-multi-publish2.unity:
+  help_url: *help_url
+  collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py"
+  publish_plugins:
+  - name: Upload for review
+    hook: "{self}/upload_version.py:{engine}/tk-multi-publish2/basic/upload_movie.py:{config}/tk-multi-publish2/basic/add_metadata.py"
+    settings: {}
+  location: "@apps.tk-multi-publish2.location"
+

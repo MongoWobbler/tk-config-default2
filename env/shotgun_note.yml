@@ -1,0 +1,20 @@
+description: Apps and Engines when launching with a Note level context.
+
+################################################################################
+
+includes:
+- ./includes/frameworks.yml
+- ./includes/settings/tk-shotgun.yml
+- ./includes/settings/tk-unity.yml
+
+################################################################################
+# configuration for all engines to load in a project context
+
+engines:
+  tk-shotgun: "@settings.tk-shotgun.note"
+  tk-unity: "@settings.tk-unity.all"
+
+################################################################################
+# reference all of the common frameworks
+
+frameworks: "@frameworks"

@@ -64,9 +64,23 @@ settings.tk-shotgun.version:
     tk-multi-screeningroom: "@settings.tk-multi-screeningroom.rv"
     tk-shotgun-launchpublish: "@settings.tk-shotgun-launchpublish"
     tk-shotgun-launchvredreview: "@settings.tk-shotgun-launchvredreview"
+    tk-multi-launchapp: "@settings.tk-multi-launchapp"
+  location: "@engines.tk-shotgun.location"
+  
+# note
+settings.tk-shotgun.note:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp"
   location: "@engines.tk-shotgun.location"
 
 # publishedfile
+settings.tk-shotgun.publishedfile:
+  apps:
+    tk-multi-screeningroom: "@settings.tk-multi-screeningroom.rv"
+    tk-shotgun-launchpublish: "@settings.tk-shotgun-launchpublish"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"
+
 settings.tk-shotgun.publishedfile:
   apps:
     tk-multi-screeningroom: "@settings.tk-multi-screeningroom.rv"
