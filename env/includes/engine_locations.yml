@@ -114,3 +114,9 @@ engines.tk-unity.location:
   organization: Unity-Technologies
   repository: tk-unity
   version: v0.10
+
+# Substance Painter
+engines.tk-substancepainter.location:
+  type: git
+  path: https://github.com/diegogarciahuerta/tk-substancepainter
+  version: v1.1.1
