@@ -53,6 +53,8 @@ settings.tk-desktop.project:
     - "*Effects*"
     - "*Unity*"
     - "*3DS*"
+    - "*Blender*"
+    - "*Substance*"
     name: Creative Tools
 #   - matches:
 #     - "*Hiero*"

@@ -170,6 +170,29 @@ keys:
 
     texture_name:
         type: str
+        
+    # Substance Designer
+    substancedesigner.texture_extension:
+        type: str
+        alias: extension
+
+    substancedesigner.channel:
+        type: str
+        alias: channel
+
+    substancedesigner.package.name:
+        type: str
+        alias: name
+
+    substancedesigner.graph.name:
+        type: str
+
+    substancedesigner.extension:
+        type: str
+        choices:
+            sbs: Substance Design File (.sbs)
+        default: sbs
+        alias: extension
 
 
 #
@@ -743,7 +766,114 @@ paths:
     substancepainter_asset_texture_path_publish:
         definition: '@asset_publish_area_substancepainter/textures/{Asset}_{texture_name}_v{version}.{texture_extension}'
         root_name: 'primary'
+        
+    #
+    # Substance Designer
+    #
 
+    # asset
+    # define the location of the work area
+    asset_work_area_substancedesigner:
+        definition: '@asset_root/work/substancedesigner'
+        root_name: 'primary'
+
+    # define the location of the publish area
+    asset_publish_area_substancedesigner:
+        definition: '@asset_root/publish/substancedesigner'
+        root_name: 'primary'
+
+    # substancedesigner session snapshots
+    substancedesigner_asset_work:
+        definition: '@asset_work_area_substancedesigner/{substancedesigner.package.name}.v{version}.{substancedesigner.extension}'
+        root_name: 'primary'
+
+    # substancedesigner session snapshots
+    substancedesigner_asset_snapshot:
+        definition: '@asset_work_area_substancedesigner/snapshots/{substancedesigner.package.name}.v{version}.{timestamp}.{substancedesigner.extension}'
+        root_name: 'primary'
+
+    # substancedesigner package
+    substancedesigner_asset_package_publish:
+        definition: '@asset_publish_area_substancedesigner/{substancedesigner.package.name}.v{version}.{substancedesigner.extension}'
+        root_name: 'primary'
+
+    # substancedesigner SBSAR package
+    substancedesigner_asset_package_archive_publish:
+        definition: '@asset_publish_area_substancedesigner/{substancedesigner.package.name}.v{version}.sbsar'
+        root_name: 'primary'
+
+    # substancedesigner package as a preset
+    substancedesigner_asset_package_mdl_publish:
+        definition: '@asset_publish_area_substancedesigner/{substancedesigner.package.name}.v{version}.mdl'
+        root_name: 'primary'
+
+    # substancedesigner graph output textures
+    substancedesigner_asset_graph_textures_path_publish:
+        definition: '@asset_publish_area_substancedesigner/textures/{substancedesigner.package.name}/{substancedesigner.graph.name}/{Asset}_textures_v{version}'
+        root_name: 'primary'
+
+    # substancedesigner graph as mdle
+    substancedesigner_asset_graph_mdle_path_publish:
+        definition: '@asset_publish_area_substancedesigner/textures/{substancedesigner.package.name}/{substancedesigner.graph.name}/{Asset}_textures_v{version}.mdle'
+        root_name: 'primary'
+        
+    #
+    # Blender
+    #
+
+    # Asset based paths
+
+    # Location of a work area
+    asset_work_area_blender:
+        definition: '@asset_root/work/blender'
+        root_name: 'primary'
+
+    # Location of a publish area
+    asset_publish_area_blender:
+        definition: '@asset_root/publish/blender'
+        root_name: 'primary'
+
+    # Location of WIP session files
+    blender_asset_work:
+        definition: '@asset_work_area_blender/{name}.v{version}.blend'
+        root_name: 'primary'
+
+    # Location of backups of WIP session files
+    blender_asset_snapshot:
+        definition: '@asset_work_area_blender/snapshots/{name}.v{version}.{timestamp}.blend'
+        root_name: 'primary'
+
+    # Location of the published session files
+    blender_asset_publish:
+        definition: '@asset_publish_area_blender/{name}.v{version}.blend'
+        root_name: 'primary'
+
+    # Shot based paths
+
+    # define the location of a work area
+    shot_work_area_blender:
+        definition: '@shot_root/work/blender'
+        root_name: 'primary'
+
+    # define the location of a publish area
+    shot_publish_area_blender:
+        definition: '@shot_root/publish/blender'
+        root_name: 'primary'
+
+    # The location of WIP session files
+    blender_shot_work:
+        definition: '@shot_root/work/blender/{name}.v{version}/{name}.v{version}.blend'
+        root_name: 'primary'
+
+    # The location of backups of WIP session files
+    blender_shot_snapshot:
+        definition: '@shot_root/work/blender/snapshots/{name}.v{version}/{name}.v{version}.{timestamp}.blend'
+        root_name: 'primary'
+
+    # The location of published session files
+    blender_shot_publish:
+        definition: '@shot_root/publish/blender/{name}.v{version}/{name}.v{version}.blend'
+        root_name: 'primary'
 
 #
 # The strings section is similar to the paths section - but rather than defining paths

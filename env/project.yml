@@ -32,6 +32,8 @@ includes:
 - ./includes/settings/tk-shotgun.yml
 - ./includes/settings/tk-unity.yml
 - ./includes/settings/tk-substancepainter.yml
+- ./includes/settings/tk-substancedesigner.yml
+- ./includes/settings/tk-blender.yml
 
 ################################################################################
 # configuration for all engines to load in a project context
@@ -56,6 +58,8 @@ engines:
   tk-shotgun: "@settings.tk-shotgun.project"
   tk-unity: "@settings.tk-unity.all"
   tk-substancepainter: "@settings.tk-substancepainter.project"
+  tk-substancedesigner: "@settings.tk-substancedesigner.project"
+  tk-blender: "@settings.tk-blender.project"
 
 ################################################################################
 # reference all of the common frameworks

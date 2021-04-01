@@ -39,3 +39,13 @@ settings.tk-multi-breakdown.unity:
 settings.tk-multi-breakdown.substancepainter:
   hook_scene_operations: '{engine}/tk-multi-breakdown/tk-substancepainter_scene_operations.py'
   location: "@apps.tk-multi-breakdown.location"
+
+# ---- Substance Designer
+settings.tk-multi-breakdown.substancedesigner:
+  hook_scene_operations: '{engine}/tk-multi-breakdown/tk-substancedesigner_scene_operations.py'
+  location: "@apps.tk-multi-breakdown.location"
+
+# ---- Blender
+settings.tk-multi-breakdown.blender:
+  hook_scene_operations: '{engine}/tk-multi-breakdown/tk-blender_scene_operations.py'
+  location: "@apps.tk-multi-breakdown.location"
